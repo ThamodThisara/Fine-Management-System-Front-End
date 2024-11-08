@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header text-center bg-primary text-white">
+            <h4>Add Officer</h4>
+        </div>
+        <div class="card-body">
+                <div class="mb-3">
+                    <label for="officerID" class="form-label">Officer ID</label>
+                    <input type="text" class="form-control" id="officerID" placeholder="Enter Officer ID" [(ngModel)]="officerDetail.officer">
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Officer's Name" [(ngModel)]="officerDetail.name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" >Position</label>
+                    <select class="form-control" name="pets" id="pet-select" [(ngModel)]="officerDetail.position">
+                        <option value="">--Please choose a position--</option>
+                        <option>Sergeant</option>
+                        <option>Constable</option>
+                        <option>Sub Inspector Of Police(SIP)</option>
+                        <option>Inspector General Of Police(IP)</option>
+                        <option>Deputy Inspector General Of Police(DIG)</option>
+                        <option>Assistant Superintendent Of Police(ASP)</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nic" class="form-label">NIC</label>
+                    <input type="text" class="form-control" id="nic" placeholder="Enter Officer's NIC" [(ngModel)]="officerDetail.nic">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="example@gmail.com" [(ngModel)]="officerDetail.email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="policeStation" class="form-label">Police Station</label>
+                    <input type="text" class="form-control" id="policeStation" placeholder="Enter Police Station" [(ngModel)]="officerDetail.policeStation">
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter Officer's Address" [(ngModel)]="officerDetail.address">
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg" (click)="addOfficer()">Submit</button>
+                </div>
+        </div>
+    </div>
+</div>

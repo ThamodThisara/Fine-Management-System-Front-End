@@ -1,0 +1,87 @@
+<h1 class="bg-primary p-4 text-center text-white">Manage Officer</h1>
+<br>
+<div class="d-flex justify-content-center">
+    <table class="table table-bordered table-hover table-striped"  style="width: 80%;">
+        <tr class=" text-bg-info">
+            <th>ID</th>
+            <th>Officer ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Nic</th>
+            <th>Email</th>
+            <th>Police Station</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    
+        <tr *ngFor = "let officer of officerList">
+            <td>{{officer.id}}</td>
+            <td>{{officer.officer}}</td>
+            <td>{{officer.name}}</td>
+            <td>{{officer.position}}</td>
+            <td>{{officer.nic}}</td>
+            <td>{{officer.email}}</td>
+            <td>{{officer.policeStation}}</td>
+            <td>{{officer.address}}</td>
+            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectUpdateCustomer(officer)"><i class="bi bi-pencil-square"></i></button></td>
+            <td><button class="btn btn-danger" (click)="deleteCustomer(officer.id)"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+
+        <tr>
+            <br>
+            <a class="btn btn-primary" routerLink="add-officer">Add Officer</a>
+        </tr>
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Officer</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">ID</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.id" disabled="true">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Officer ID</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.officer">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Position</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.position">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">NIC</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.nic">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Email</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.email">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Poice Statiion</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.policeStation">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Address</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedCustomer.address">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveCustomer()">Update Officer</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
