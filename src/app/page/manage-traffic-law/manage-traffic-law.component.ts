@@ -93,14 +93,16 @@ export class ManageTrafficLawComponent {
 
   searchTrafficLaw(){
     this.http.get(`http://localhost:8080/trafficLaw/get-by-id/${this.findTrafficLaw}`)
-      .pipe(
-        catchError(error => {
-          console.error("Officer ID search failed, trying NIC search", error);
-          return of(null);
-        })
-      )
       .subscribe(data => {
-        this.trafficLawList = [data];
+        if (data) {
+          this.trafficLawList = [data];
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid Taffic Law ID"
+          });
+        }
       });
   }
 }

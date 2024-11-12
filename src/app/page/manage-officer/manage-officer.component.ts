@@ -113,7 +113,11 @@ export class ManageOfficerComponent {
             .pipe(
               catchError(nicError => {
                 console.error("NIC search also failed", nicError);
-                alert("Invalid Entry!");
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops...",
+                  text: "Invalid Entry!"
+                });
                 return of(null);
               })
             )
@@ -122,7 +126,11 @@ export class ManageOfficerComponent {
                 console.log(nicData);
                 this.officerList = [nicData];
               } else {
-                alert("No officer found with the given ID or NIC");
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops...",
+                  text: "No officer found with the given ID or NIC"
+                });
               }
             });
         }
