@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header text-center bg-primary text-white">
+            <h4>Add Traffic Law</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label">Tittle</label>
+                <select class="form-control" name="pets" id="pet-select" [(ngModel)]="trafficLawDetail.title">
+                    <option value="">--Please choose a title--</option>
+                    <option>Speeding</option>
+                    <option>Running a Red Light</option>
+                    <option>Drunk Driving</option>
+                    <option>No Seatbelt</option>
+                    <option>Illegal Parking</option>
+                    <option>Reckless Driving</option>
+                    <option>No License</option>
+                    <option>Expired Vehicle Registration</option>
+                    <option>Failure to Yield to Pedestrians</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="nic" class="form-label">Description</label>
+                <input type="text" class="form-control" id="nic" placeholder="description"
+                    [(ngModel)]="trafficLawDetail.description">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Fine Amount</label>
+                <input type="email" class="form-control" id="email" placeholder="Rs."
+                    [(ngModel)]="trafficLawDetail.fineAmount">
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg" (click)="addTrafficLaw()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

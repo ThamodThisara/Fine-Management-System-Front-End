@@ -31,7 +31,6 @@ export class ManageOfficerComponent {
     this.http.get("http://localhost:8080/officer/view-all")
       .subscribe(data => {
         this.officerList = data;
-        // this.filteredOfficerList = this.officerList;
       });
   }
 

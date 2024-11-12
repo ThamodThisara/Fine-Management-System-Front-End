@@ -1,0 +1,81 @@
+<h1 class="bg-primary p-4 text-center text-white">Manage Traffic Law</h1>
+
+<div class="container mt-6">
+    <div class="d-flex justify-content-start mb-3">
+        <input class="form-control me-2" type="search" placeholder="Search by Traffic Law ID" aria-label="Search"
+            [(ngModel)]="findTrafficLaw" style="width: 250px;">
+        <button class="btn btn-outline-success" type="submit" (click)="searchTrafficLaw()">Search</button>
+    </div>
+    <table class="table table-bordered table-hover table-striped" style="width: 100%;">
+        <thead class="text-bg-info">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Fine_Amount</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trafficLaw of trafficLawList">
+                <td>{{trafficLaw.id}}</td>
+                <td>{{trafficLaw.title}}</td>
+                <td>{{trafficLaw.description}}</td>
+                <td>{{trafficLaw.fineAmount}}</td>
+                <td>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="selectUpdateTrafficLaw(trafficLaw)">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteTrafficLaw(trafficLaw.id)">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="10" class="text-center">
+                    <a class="btn btn-primary" routerLink="add-traffic-law">Add Traffic Law</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Traffic Law</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">ID</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedTrafficLaw.id"
+                        disabled="true">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Title</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedTrafficLaw.title">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Description</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedTrafficLaw.description">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Fine Amount</label>
+                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedTrafficLaw.fineAmount">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button data-bs-dismiss="modal" type="button" class="btn btn-primary" (click)="updateTrafficLaw()">Update
+                    Traffic Law</button>
+            </div>
+        </div>
+    </div>
+</div>
