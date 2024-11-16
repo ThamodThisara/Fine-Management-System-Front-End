@@ -1,0 +1,79 @@
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="text-center mb-0">Fine Issuing Form</h3>
+        </div>
+        <div class="card-body">
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="number" class="form-control" id="id" placeholder="Enter ID" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="fineTotalAmount" class="form-label">Fine Total Amount</label>
+                    <input type="number" step="1" class="form-control" id="fineTotalAmount"
+                        placeholder="Enter Total Fine Amount" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="driverName" class="form-label">Driver Name</label>
+                    <input type="text" class="form-control" id="driverName" placeholder="Enter Driver's Name" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="driverLicenceNumber" class="form-label">Driver Licence Number</label>
+                    <input type="text" class="form-control" id="driverLicenceNumber" placeholder="Enter Licence Number"
+                        required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="driverNic" class="form-label">Driver NIC</label>
+                    <input type="text" class="form-control" id="driverNic" placeholder="Enter NIC" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="driverAddress" class="form-label">Driver Address</label>
+                    <input type="text" class="form-control" id="driverAddress" placeholder="Enter Address" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="driverEmail" class="form-label">Driver Email</label>
+                    <input type="email" class="form-control" id="driverEmail" placeholder="Enter Email" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="driverContact" class="form-label">Driver Contact</label>
+                    <input type="tel" class="form-control" id="driverContact" placeholder="Enter Contact Number"
+                        required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="officerTableId" class="form-label">Officer Table ID</label>
+                    <input type="number" class="form-control" id="officerTableId" placeholder="Enter Officer Table ID"
+                        required>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="fineSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

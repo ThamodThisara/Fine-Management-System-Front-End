@@ -5,6 +5,7 @@ import { LoginPageComponent } from './page/login-page/login-page.component';
 import { DashBoardPageComponent } from './page/dash-board-page/dash-board-page.component';
 import { ManageTrafficLawComponent } from './page/manage-traffic-law/manage-traffic-law.component';
 import { AddTrafficLawComponent } from './page/add-traffic-law/add-traffic-law.component';
+import { FineIssuingComponent } from './page/fine-issuing/fine-issuing.component';
 
 export const routes: Routes = [
     {
@@ -40,6 +41,10 @@ export const routes: Routes = [
                         component: AddTrafficLawComponent
                     }
                 ]
+            },
+            {
+                path: "fine-issuing",
+                component : FineIssuingComponent
             }
         ]
     },
