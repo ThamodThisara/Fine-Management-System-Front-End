@@ -6,16 +6,26 @@ import { DashBoardPageComponent } from './page/dash-board-page/dash-board-page.c
 import { ManageTrafficLawComponent } from './page/manage-traffic-law/manage-traffic-law.component';
 import { AddTrafficLawComponent } from './page/add-traffic-law/add-traffic-law.component';
 import { FineIssuingComponent } from './page/fine-issuing/fine-issuing.component';
+import { HomeComponent } from './page/home/home.component';
+// import { LandingPageComponent } from './page/landing-page/landing-page.component';
 
 export const routes: Routes = [
+    // {
+    //     path: '',
+    //     component: LandingPageComponent
+    // },
     {
         path: '',
         component: LoginPageComponent
     },
     {
-        path: "dashboard",
-        component: DashBoardPageComponent,
+        path: "home",
+        component: HomeComponent,
         children: [
+            {
+              path: "dashboard",
+              component: DashBoardPageComponent
+            },
             {
                 path: "manage-officer",
                 component: ManageOfficerComponent
@@ -24,7 +34,7 @@ export const routes: Routes = [
                 path: "manage-officer",
                 children: [
                     {
-                        path: "add-officer", 
+                        path: "add-officer",
                         component: AddOfficerComponent
                     }
                 ]
@@ -37,7 +47,7 @@ export const routes: Routes = [
                 path: "manage-traffic-law",
                 children: [
                     {
-                        path: "add-traffic-law", 
+                        path: "add-traffic-law",
                         component: AddTrafficLawComponent
                     }
                 ]

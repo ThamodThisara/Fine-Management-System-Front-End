@@ -1,2 +1,41 @@
-<app-nav></app-nav>
-<router-outlet></router-outlet>
+<div class="container mt-5">
+    <div class="row g-3">
+        <!-- Total Earning -->
+        <div class="col-md-4">
+            <div class="bg-primary text-white text-center rounded-3 p-4">
+                <div class="d-flex justify-content-center align-items-center mb-2">
+                    <span class="me-2">ℹ️</span>
+                    <span class="fw-bold">Total Fines</span>
+                </div>
+                <h3 class="fw-bold">{{fineCount}}</h3>
+            </div>
+        </div>
+  
+        <!-- Average Earning -->
+        <div class="col-md-4">
+            <div class="bg-info text-white text-center rounded-3 p-4">
+                <div class="d-flex justify-content-center align-items-center mb-2">
+                    <span class="me-2">ℹ️</span>
+                    <span class="fw-bold">Total Traffic Laws</span>
+                </div>
+                <h3 class="fw-bold">{{trafficLawCount}}</h3>
+            </div>
+        </div>
+  
+        <!-- Conversation Rate -->
+        <div class="col-md-4">
+            <div class="bg-success text-white text-center rounded-3 p-4">
+                <div class="d-flex justify-content-center align-items-center mb-2">
+                    <span class="me-2">ℹ️</span>
+                    <span class="fw-bold">Total Officers</span>
+                </div>
+                <h3 class="fw-bold">{{officerCount}}</h3>
+            </div>
+        </div>
+    </div>
+  
+    <div class="row g-3 mt-3">
+      <img src="assests/images/dashboard.jpg" alt="dashboard image" class="rounded">
+    </div>
+  </div>
+  
